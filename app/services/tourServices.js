@@ -3,7 +3,20 @@ let config = ('../config/config');
 let Tour = require('../models/Tour');
 
 async function index(req, res, next) {
-    
+    try {
+        let tourServices = await Tour.find().select();
+        return res.json({
+            success: "true",
+            message: "success get data tour",
+            data: tourServices
+        });
+    } catch (error) {
+        return res.json({
+            success: "false",
+            message: "failed get data",
+            log : error.message,
+        });
+    }
 }
 
 async function store(req, res, next) {
