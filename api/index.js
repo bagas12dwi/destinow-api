@@ -1,4 +1,4 @@
-import app from require('../app');
+let app = require('../app');
 
 
 export default app;
