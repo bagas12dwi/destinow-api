@@ -7,6 +7,7 @@ const imageFIlter = require('../middleware/imageFilter');
 const upload = multer({dest: 'public/tmp', fileFilter: imageFIlter.imageFIlter});
 
 router.get('/tour', tourServices.index);
+router.get('/tour/:id', tourServices.detail);
 router.post('/tour/store', upload.array('image', 10), tourServices.store);
 
 module.exports = router;

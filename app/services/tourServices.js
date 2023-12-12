@@ -22,6 +22,25 @@ async function index(req, res, next) {
     }
 }
 
+async function detail(req, res, next) {
+    
+    try {
+        let tourData = await Tour.findOne({_id: req.params.id});
+
+        return res.json({
+            success: 'true',
+            message: 'success get data',
+            data: tourData
+        });
+    } catch (error) {
+        return res.json({
+            success: "false",
+            message: "failed get data",
+            log : error.message,
+        });
+    }
+}
+
 async function store(req, res, next) {
     try {
         let payload = req.body;
@@ -94,5 +113,6 @@ async function uploadFile(file) {
 
 module.exports = {
     index,
-    store
+    store,
+    detail
 }
