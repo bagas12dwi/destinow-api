@@ -11,7 +11,7 @@ module.exports = {
     DB_USER: process.env.DB_USER,
     DB_HOST: process.env.DB_HOST,
     // ASSETS: "../../../img/",
-    ASSETS: "../../public/img/",
+    ASSETS: "../../public/images/",
     MONGODB_URI: process.env.MONGODB_URI,
     FCM_SERVERKEY: process.env.FCM_SERVERKEY,
     PUBLIC_DIR: process.env.PUBLIC_DIR,

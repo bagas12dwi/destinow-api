@@ -51,10 +51,22 @@ let tourSchema = Schema({
             message: "opening hours can't by null or empty"
         }
     },
-    image: {
+    lat: {
+        type: String
+    },
+    long: {
+        type: String
+    },
+    image_path: {
         type: String,
-        required: false,
-        default: null
+    },
+    description: {
+        type: String, 
+        required: true,
+    },
+    rating: {
+        type: Number, 
+        required: true
     },
     created_at: {
         type: Date,

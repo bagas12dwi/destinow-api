@@ -12,14 +12,14 @@ let tourRoutes = require('./app/routes/tourRoutes');
 
 mongoose.Promise = global.Promise;
 mongoose
-    .connect(config.MONGODB_URI).then(
-        () => {
-            console.log("Mongodb is connected");
-        },
-        err => {
-            console.log("Cannot connect to the mongodb" + err);
-        }
-    );
+.connect(config.MONGODB_URI).then(
+    () => {
+        console.log("Mongodb is connected");
+    },
+    err => {
+        console.log("Cannot connect to the mongodb" + err);
+    }
+);
 
 app.use(cors());
 app.use(
